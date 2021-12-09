@@ -1,0 +1,51 @@
+.preloader {
+  background-color: #f5f6f7;
+  display: flex;
+  justify-content: center;
+}
+
+.preloader__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 280px;
+  margin: 80px 0;
+  width: 19.44%;
+}
+
+.preloader__pic {
+  animation: spin 2s linear infinite;
+}
+
+.preloader__description {
+  color: #b6bcbf;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 24px 0 0 0;
+  text-align: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .preloader__container {
+    max-width: 384px;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .preloader__container {
+    max-width: 405px;
+    width: 90%;
+  }
+}
