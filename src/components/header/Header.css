@@ -1,0 +1,25 @@
+.header {
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 104px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header__logo {
+  height: 100%;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 80px;
+  color: white;
+  margin: 0;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
