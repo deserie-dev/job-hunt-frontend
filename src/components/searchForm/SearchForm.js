@@ -25,23 +25,23 @@ function SearchForm(props) {
   }
 
   return (
-    <section className="search-hero">
-      <div className="search-hero__container">
-        <h1 className="search-hero__title">Search for a Job</h1>
-        <form className="search-hero__search-container" onSubmit={handleSubmit}>
+    <section className="search-form">
+      <div className="search-form__container">
+        <h1 className="search-form__title">Your new job is waiting for you.</h1>
+        <form className="search-form__search-container" onSubmit={handleSubmit}>
           <input
-            className="search-hero__input"
+            className="search-form__input"
             placeholder="Job Title"
             value={jobInputValue}
             onChange={handleJobInput}
           ></input>
           <input
-            className="search-hero__input"
+            className="search-form__input"
             placeholder="Enter location"
             value={locationInputValue}
             onChange={handleLocationInput}
           ></input>
-          <button className="search-hero__button" type="submit">
+          <button className="search-form__button" type="submit">
             Find Jobs
           </button>
         </form>

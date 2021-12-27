@@ -1,0 +1,20 @@
+.page-not-found__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 160px auto 80px auto;
+  max-width: 607px;
+  position: relative;
+}
+
+.page-not-found__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 64px;
+  margin: 0 0 32px 0;
+}
