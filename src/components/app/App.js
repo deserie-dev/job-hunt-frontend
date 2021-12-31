@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from '../header/Header';
 import SearchForm from '../searchForm/SearchForm';
@@ -11,14 +11,10 @@ function App() {
   return (
     <div className='page'>
       <Header />
-      <Switch>
-        <Route exact path="/">
-          <SearchForm />
-        </Route> 
-        <Route path="*">
-          <PageNotFound />
-        </Route>  
-      </Switch>
+      <Routes>
+        <Route exact path="/" element={<SearchForm/>}/>
+        <Route path="*" element={<PageNotFound/>}/> 
+      </Routes>
       <Footer />
     </div>
   );
