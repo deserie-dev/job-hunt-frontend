@@ -8,12 +8,12 @@ function SearchForm(props) {
   const [jobInputValue, setJobInputValue] = useState('');
   const [locationInputValue, setLocationInputValue] = useState('');
 
-  const handleJobInput = (event) => {
-    setJobInputValue(event.target.value);
+  function handleJobInput(e) {
+    setJobInputValue(e.target.value);
   }
 
-  const handleLocationInput = (event) => {
-    setLocationInputValue(event.target.value);
+  function handleLocationInput(e) {
+    setLocationInputValue(e.target.value);
   }
 
   function handleSubmit(e) {

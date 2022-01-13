@@ -8,7 +8,7 @@ function Header () {
     <header className="header">
       <NavLink to ="/" className="header__logo">JobHunt</NavLink>
       
-      <div className="heaer__links">
+      <div className="header__links">
         <NavLink className="header__links-item" to="/">Home</NavLink>
         <NavLink className="header__links-item" to="/services">Services</NavLink>
         <NavLink className="header__links-item" to="/contact">Contact</NavLink>

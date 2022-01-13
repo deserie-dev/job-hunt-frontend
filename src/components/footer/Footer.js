@@ -9,7 +9,7 @@ function Footer() {
     <div className="footer__columns">
 
       <div className="footer__column footer__column_content_copyright">
-        <img className="logo logo_place_footer" src="./images/logo_place_footer.png" alt="Footer Logo" />
+        <h5 className="footer__logo">JobHunt</h5>
         <p className="footer__author">&copy; 2022. Deserie Murembeni</p>
       </div>
 

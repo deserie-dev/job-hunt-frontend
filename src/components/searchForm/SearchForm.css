@@ -1,22 +1,11 @@
 .search-form {
+  background-image: url("../../images/background1.png");
+  background-position: center;
+  background-size: cover;
   margin: 0;
   margin-top: -100px;
   height: 80vh;
   overflow: auto;
-  position: relative;
-}
-
-.search-form::before {
-  background-image: url("../../images/background1.png");
-  background-position: center;
-  background-size: cover;
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.75;
 }
 
 .search-form__container {
@@ -24,8 +13,6 @@
   flex-direction: column;
   align-items: center;
   margin: 160px auto 80px auto;
-  max-width: 650;
-  position: relative;
 }
 
 .search-form__title {
@@ -38,16 +25,17 @@
   text-align: left;
 }
 
-.search-form__search-container {
+/* .search-form__search-container {
   display: flex;
   flex-wrap: nowrap;
   max-width: 608px;
   width: 100%;
-}
+} */
 
 .search-form__form {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .search-form__input {
@@ -91,21 +79,38 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 780px) {
   .search-form__container {
-    margin: 142px auto 48px auto;
-    max-width: 452px;
+    max-width: 550px;
+    margin: 120px auto 30px auto;
+    width: 90%;
+  }
+
+  .search-form__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    max-width: 550px;
   }
 
   .search-form__title {
     font-size: 36px;
     line-height: 40px;
     margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .search-form__input {
+    margin-bottom: 20px;
+    max-width: 550px;
   }
 
   .search-form__button {
-    margin-left: -160px;
-    width: 160px;
+    /* margin-left: -160px; */
+    margin-bottom: 20px;
+    max-width: 550px;
+    margin-left: 0;
   }
 }
 
@@ -123,11 +128,12 @@
 
   .search-form__input {
     height: 60px;
+    max-width: 600px;
   }
 
   .search-form__button {
     margin-left: -145px;
-    width: 145px;
+    max-width: 448px;
   }
 }
 

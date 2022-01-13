@@ -7,6 +7,18 @@
   font-family: "Roboto", sans-serif;
 }
 
+.footer__logo {
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 80px;
+  margin-top: -15px;
+  padding: 0;
+  text-decoration: none;
+}
+
 .footer__author {
   color: white;
   line-height: 25px;

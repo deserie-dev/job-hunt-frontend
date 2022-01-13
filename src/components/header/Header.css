@@ -8,20 +8,22 @@
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
+  z-index: 999;
 }
 
 .header__logo {
   display: flex;
   align-items: center;
+  justify-self: start;
   color: #ffffff;
+  cursor: pointer;
   font-family: "Roboto Slab", sans-serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 30px;
   line-height: 80px;
-  margin: 0;
+  margin-left: 20px;
   padding: 0;
   text-decoration: none;
-  transition: opacity 0.2s ease;
 }
 
 .header__links {
