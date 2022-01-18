@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom';
-import './App.css';
 import Header from '../header/Header';
 import SearchForm from '../searchForm/SearchForm';
+import About from '../about/About';
 import PageNotFound from '../pageNotFound/PageNotFound';
 import Footer from '../footer/Footer';
 import ScrollToTop from '../scrollToTop/ScrollToTop';
@@ -14,10 +14,13 @@ function App() {
       <ScrollToTop />
       <Header />
       <Switch>
-        <Route exact path="/">
+        <Route exact path='/'>
           <SearchForm/>
         </Route>
-        <Route path="*">
+        <Route>
+          <About path='/about'/>
+        </Route>
+        <Route path='*'>
           <PageNotFound/> 
         </Route>
       </Switch>

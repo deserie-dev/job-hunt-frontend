@@ -43,7 +43,7 @@ function SearchForm(props) {
         ></input>
         <button className="search-form__button" type="submit">
           Find Jobs
-      </button>
+        </button>
       </form>
       </div>
     </section>
