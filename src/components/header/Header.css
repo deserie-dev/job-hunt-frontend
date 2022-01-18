@@ -1,5 +1,4 @@
 .header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 18px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -8,7 +7,8 @@
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
-  z-index: 999;
+  position: relative;
+  z-index: 2;
 }
 
 .header__logo {
@@ -47,10 +47,93 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-.header__links-item_hidden {
+/* .header__links-item_hidden {
   display: none;
-}
+} */
 
 .header__links-item:hover {
   opacity: 0.5;
+  cursor: pointer;
+}
+
+.header__hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+    width: 100vw;
+    margin: 0;
+  }
+
+  .header__mobile {
+    background: #1a1b22;
+  }
+
+  .header__links {
+    padding: 0;
+    display: none;
+    text-align: center;
+    z-index: 5;
+    width: 100vw;
+    position: fixed;
+    background: rgb(26, 27, 34);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 56px;
+  }
+
+  .header__links-item {
+    color: #ffffff;
+    padding: 14px 0px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    margin-left: 16px;
+    margin-bottom: 24px;
+  }
+
+  .header__hamburger {
+    padding: 0;
+    display: block;
+    border: 0;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .header__button-open {
+    background-image: url("../../images/menu.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(196, 196, 196, 0.01);
+    transform: translate(-100%, 60%);
+  }
+
+  .header__button-close {
+    background-image: url("../../images/close.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(196, 196, 196, 0.01);
+  }
+
+  .header__links-item_selected {
+    color: #ffffff;
+    border-bottom: none;
+  }
+
+  .header__links-hidden {
+    display: none;
+  }
+
+  .header__links-open {
+    display: block;
+  }
 }
