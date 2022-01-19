@@ -17,8 +17,8 @@ function Header () {
       <button onClick={toggleDropDown} type="button" className={`header__hamburger ${burger ? 'header__button-open' : 'header__button-close'}`} />
       
       <div id="header__links" className={`header__links ${burger ? 'header__links-hidden' : 'header__links-open'}`}>
-        <NavLink className="header__links-item" to="/services">About</NavLink>
-        <NavLink className="header__links-item" to="/contact">Contact</NavLink>
+        <NavLink className="header__links-item" to="/about">About</NavLink>
+        <NavLink className="header__links-item" to="/services">Services</NavLink>
       </div>      
     </header>
   )

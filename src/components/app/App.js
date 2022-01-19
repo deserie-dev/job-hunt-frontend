@@ -1,30 +1,30 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom';
 import Header from '../header/Header';
-import SearchForm from '../searchForm/SearchForm';
 import About from '../about/About';
-import PageNotFound from '../pageNotFound/PageNotFound';
+import Services from '../services/Services'
+import SearchForm from '../searchForm/SearchForm';
 import Footer from '../footer/Footer';
-import ScrollToTop from '../scrollToTop/ScrollToTop';
 
 function App() {
 
   return (
     <div className='page'>
-      <ScrollToTop />
       <Header />
       <Switch>
+        <Route  exact path='/about'>
+          <About />
+        </Route>
+        <Route exact path='/services'>
+          <Services />
+        </Route>
         <Route exact path='/'>
-          <SearchForm/>
-        </Route>
-        <Route>
-          <About path='/about'/>
-        </Route>
-        <Route path='*'>
-          <PageNotFound/> 
+          <SearchForm />
+          <About />
+          <Services />
         </Route>
       </Switch>
-      <Footer />
+      <Footer/>
     </div>
   );
 }
