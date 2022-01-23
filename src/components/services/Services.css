@@ -1,26 +1,57 @@
 .services {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  max-width: 1600px;
+  padding: 50px 20px;
+  margin: 0 auto;
+}
+
+.services__header {
+  color: rgb(211, 21, 21);
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  margin-bottom: 24px;
   text-align: center;
 }
 
-.services .service {
-  padding: 30px;
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
 }
 
-.services .service:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.services__service {
+  max-width: 100%;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 250ms;
+  cursor: pointer;
 }
 
-.services .service h2 {
-  font-size: 24px;
-  font-weight: 500;
-  margin-top: 20px;
-  color: var(--secondary-color);
+.services__service:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 10px black;
 }
 
-.services .service .icon img {
-  max-width: 100px;
+.services__title {
+  color: rgb(211, 21, 21);
+  padding: 0;
+  margin: 0;
+  width: 256px;
+}
+
+.services__description {
+  color: rgb(211, 21, 21);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 29px;
+  margin: 0;
+  padding: 0;
+  max-width: 256px;
+  /* max-width: calc(100% - 21px); */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
 }

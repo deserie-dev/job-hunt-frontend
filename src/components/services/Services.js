@@ -9,66 +9,39 @@ import './Services.css';
 
 function Services() {
   return(
-    <section>
-      <div class="title">
-        <h1>Services that we can help you with</h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus
-          iusto molestias accusamus rem nobis est, et laborum harum doloremque
-          nemo non, minima quos totam labore maxime iste alias ut esse? Repellat
-          eaque reiciendis laboriosam corporis fuga vero ratione veritatis
-          numquam, libero magni voluptatum omnis molestiae officiis
-          exercitationem qui quidem nam.
-        </p>
-      </div>
-      <div class="services">
-        <div class="service">
-          <div class="icon">
-            <img src={Service1} alt="services" />
-          </div>
-          <h2>Resume Writing</h2>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum omnis
-          nemo sapiente in quidem sed dolores cumque! Ut, est aliquid!
+    <section className="services">
+      <h1 className="services__header">Services</h1>
+      <div class="services__grid">
+        <div class="services__service">
+          <img src={Service1} alt="services" />
+          <h2 className="services__title">Resume Writing</h2>
+          <p className="services__description">An expertly written and keyword-optimized resume that sets you apart. Professionally written, by experts that know your industry.
+          Formatted for success - Formatting that will get an employer's attention.</p>
         </div>
-        <div class="service">
-          <div class="icon">
-            <img src={Service2} alt="services" />
-          </div>
-          <h2>Career Coaching</h2>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum omnis
-          nemo sapiente in quidem sed dolores cumque! Ut, est aliquid!
+        <div class="services__service">
+          <img src={Service2} alt="services" />
+          <h2 className="services__title">Career Advice</h2>
+          <p className="services__description">Job-search tips and expert advice to help you get ahead in your career.</p>
         </div>
-        <div class="service">
-          <div class="icon">
-            <img src={Service3} alt="services" />
-          </div>
-          <h2>Mentorship</h2>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum omnis
-          nemo sapiente in quidem sed dolores cumque! Ut, est aliquid!
+        <div class="services__service">
+          <img src={Service3} alt="services" />
+          <h2 className="services__title">Resume Distribution</h2>
+          <p className="services__description">Whether you are actively seeking a new position or just monitoring the job market, the most effective way of getting a new position is to work with a recruiter. Not just any recruiter, though. Your resume must get into the hands of select recruiters looking to fill that unique and rewarding role.</p>
         </div>
-        <div class="service">
-          <div class="icon">
-            <img src={Service4} alt="services" />
-          </div>
-          <h2>Portfolio Design</h2>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum omnis
-          nemo sapiente in quidem sed dolores cumque! Ut, est aliquid!
+        <div class="services__service">
+          <img src={Service4} alt="services" />
+          <h2 className="services__title">LinkedIn Makeover</h2>
+          <p className="services__description">97% of employers use LinkedIn; we'll rewrite your profile. Our certified LinkedIn specialists know and are ready to help create a LinkedIn profile that gets you found fast!</p>
         </div>
-        <div class="service">
-          <div class="icon">
-            <img src={Service5} alt="services" />
-          </div>
-          <h2>Mock Interviews</h2>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum omnis
-          nemo sapiente in quidem sed dolores cumque! Ut, est aliquid!
+        <div class="services__service">
+          <img src={Service5} alt="services" />
+          <h2 className="services__title">Interview Preparation</h2>
+          <p className="services__description">Are you unsure of your interviewing skills? Once you are confident in the strategy and purpose of the interview, you will also be confident in the interview itself. Work one-on-one with your coach to ensure you are prepared by learning research techniques, question preparation, salary negotiation, and a must-do list for interview follow up.</p>
         </div>
-        <div class="service">
-          <div class="icon">
-            <img src={Service6} alt="services" />
-          </div>
-          <h2>Placements</h2>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum omnis
-          nemo sapiente in quidem sed dolores cumque! Ut, est aliquid!
+        <div class="services__service">
+          <img src={Service6} alt="services" />
+          <h2 className="services__title">Job Search Strategies</h2>
+          <p className="services__description">Been out of the job search a while and unsure of where to start? We know how overwhelming this can be. Together, you and your coach will review your options and look at all of the opportunities and available avenues out there for you.</p>
         </div>
       </div>
     </section>

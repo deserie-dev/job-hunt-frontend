@@ -1,54 +1,77 @@
 .about {
-  display: block;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
+  display: grid;
+  gap: 56px;
+  grid-template-columns: 4fr 6fr;
+  align-items: center;
   width: 100%;
   max-width: 1440px;
   padding: 80px 104px;
   margin: 0 auto;
 }
 
+.about__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding-top: 40px;
+}
+
 .about__header {
+  color: rgb(211, 21, 21);
   font-family: "Roboto Slab", serif;
   font-weight: 400;
   font-size: 40px;
-  margin: 0;
+  line-height: 46px;
+  margin-bottom: 24px;
 }
 
 .about__paragraph {
+  color: rgb(211, 21, 21);
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  margin-top: 5px;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 24px;
+  margin-bottom: 24px;
 }
 
-.star__image {
-  /* display: flex;
-  align-items: center;
-  max-width: 300px;
-  padding-top: 80px;
-  padding-bottom: 61px; */
-  display: block;
-  height: 50px;
-  width: 20%;
-  margin-left: auto;
-  margin-right: auto;
+.about__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.about__image {
+  /* max-width: 100%; */
+  border-radius: 50%;
+  width: 464px;
+  height: 464px;
+  /* border-radius: 100%;
+  max-width: 464px;
+  max-height: 464px;
+  width: 30vw;
+  height: 30vw; */
 }
 
 @media screen and (max-width: 1024px) {
+  .about {
+    padding: 40px;
+    gap: 32px;
+  }
+
   .about__image {
     max-width: 300px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 80px;
+    padding-bottom: 61px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 630px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+
   .about__image {
-    max-width: 262px;
-    padding-top: 61px;
+    max-width: 304px;
+    justify-self: center;
   }
 
   .about__header {
@@ -62,13 +85,10 @@
   }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 480px) {
   .about {
-    flex-direction: column;
-    padding-top: 32px;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 128px;
+    gap: 16px;
+    padding: 24px 16px 128px;
   }
 
   .about__image {
