@@ -8,24 +8,30 @@ import DisplayJobsList from '../displayJobsList/DisplayJobsList';
 import Footer from '../footer/Footer';
 import Preloader from '../preloader/Preloader';
 import PageNotFound from '../pageNotFound/PageNotFound';
-import Job from '../jobCard/JobCard';
-import getJobs from '../../utils/getJobs';
+import jobsApi from '../../utils/JobsApi';
 
 function App() {
 
   const [params, setParams] = useState({});
-  const { jobs } = getJobs(params);
+  const [cards, setCards] = useState([]);
+  const [displayedCards, setDisplayedCards] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  // const [hasResults, setHasResults] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  function handleParamChange(e) {
-    const param = e.target.name;
-    const value = e.target.value;
-
-    setParams(prevParams => {
-      return { ...prevParams, [param]: value }
-    })
+  function searchJobs (value) {
+    setIsLoading(true);
+    jobsApi
+    .getJobs(value)
+      .then((res) => {
+        setCards(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        setHasError(true);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }
 
   return (
@@ -41,7 +47,13 @@ function App() {
         <Route exact path='/'>
           <SearchForm
             params={params}
-            onParamChange={handleParamChange}
+            setParams={setParams}
+            onSubmit={searchJobs}
+          />
+          <DisplayJobsList
+            cards={cards}
+            displayedCards={displayedCards}
+            setDisplayedCards={setDisplayedCards}
           />
           {isLoading && <Preloader />}
           <PageNotFound hasError={hasError} />
