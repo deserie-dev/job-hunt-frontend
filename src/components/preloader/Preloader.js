@@ -6,8 +6,8 @@ function Preloader() {
   return (
     <section className="preloader">
       <div className="preloader__container">
+        <p className="preloader__description">Searching for Jobs...</p>
         <img className="preloader__pic" src={PreloaderPic} alt="Loading" />
-        <p className="preloader__description">Loading...</p>
       </div>
     </section>
   );

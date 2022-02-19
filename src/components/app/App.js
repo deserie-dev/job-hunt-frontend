@@ -4,7 +4,7 @@ import Header from '../header/Header';
 import About from '../about/About';
 import Services from '../services/Services'
 import SearchForm from '../searchForm/SearchForm';
-import DisplayJobsList from '../displayJobsList/DisplayJobsList';
+import JobCardList from '../jobCardList/JobCardList';
 import Footer from '../footer/Footer';
 import Preloader from '../preloader/Preloader';
 import PageNotFound from '../pageNotFound/PageNotFound';
@@ -12,18 +12,18 @@ import jobsApi from '../../utils/JobsApi';
 
 function App() {
 
-  const [params, setParams] = useState({});
-  const [cards, setCards] = useState([]);
-  const [displayedCards, setDisplayedCards] = useState([]);
+  const [query, setQuery] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  function searchJobs (value) {
+  function handleSearchSubmit ({ query }) {
     setIsLoading(true);
+    setQuery({})
     jobsApi
-    .getJobs(value)
-      .then((res) => {
-        setCards(res);
+    .getJobs(query)
+      .then((data) => {
+        console.log(data)
+        setQuery(data);
       })
       .catch((err) => {
         console.log(err);
@@ -46,16 +46,17 @@ function App() {
         </Route>
         <Route exact path='/'>
           <SearchForm
-            params={params}
-            setParams={setParams}
-            onSubmit={searchJobs}
+            onSearch={handleSearchSubmit}
           />
-          <DisplayJobsList
-            cards={cards}
-            displayedCards={displayedCards}
-            setDisplayedCards={setDisplayedCards}
-          />
-          {isLoading && <Preloader />}
+
+          {query.status === "ok" ? (
+            <JobCardList
+              jobs={query.jobCards}
+            />
+          ) : (
+            ""  
+          )}          
+          {isLoading ? <Preloader /> : ""}
           <PageNotFound hasError={hasError} />
           <About />
           <Services />

@@ -1,30 +1,17 @@
+const baseUrl = "https://www.themuse.com/api/public/jobs";
+const API_KEY = "94aaffb424ee169e233b76862820e2e20287edf6c5110839dbc54094da5d451a";
+
 class JobsApi {
-  constructor({ baseUrl, headers }) {
-    this.baseUrl = baseUrl;
-    this.headers = headers;
-  }
-
-  _checkResponse(res) {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
-  };
-
-  getJobs(params) {
-    return fetch(this.baseUrl + `/linkedin/search?query=${params}`, {
-        method: "GET",
-        headers: this.headers
-    })
-    .then((res) => this._checkResponse(res));
-  }
+    getJobs (query) {
+        return fetch(
+          `${baseUrl}?page=1&category=${query}&apiKey=${API_KEY}`
+        )
+        .then((res) => res.json())
+        .then((data) => data);
+    };
 }
 
-const jobsApi = new JobsApi({
-    baseUrl: "https://job-search4.p.rapidapi.com",
-    headers: {
-        "x-rapidapi-key": "d15362807amsh21ff82b82badd18p1e0439jsn7e39c5e227ec"
-    },
-});
+const jobsApi = new JobsApi();
 
 export default jobsApi;
+  

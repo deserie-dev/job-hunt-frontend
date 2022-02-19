@@ -1,0 +1,33 @@
+.job-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-sizing: border-box;
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+.job-card__link {
+  text-decoration: none;
+}
+
+.job-card__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 400;
+  color: #1a1b22;
+  margin: 12px 0 16px;
+}
+
+.job-card__description {
+  width: 88%;
+  padding: 20px 24px 24px;
+  margin: 0;
+}

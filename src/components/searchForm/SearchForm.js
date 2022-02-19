@@ -1,42 +1,30 @@
 import React, { useState } from 'react';
 import './SearchForm.css';
 
-function SearchForm(props) {
+function SearchForm({ onSearch }) {
 
-  const [params, setParams] = useState({});
+  const [keyword, setKeyword] = useState("");
 
-  function handleSubmit(e) {
+  function handleSearchSubmit(e) {
     e.preventDefault();
-    props.onSubmit(params)
+    onSearch({keyword})
   }
 
-  function onParamChange(e) {
-    const param = e.target.name;
-    const value = e.target.value;
-
-    setParams(prevParams => {
-      return { ...prevParams, [param]: value }
-    })
+  function handleChange(e) {
+    setKeyword(e.target.value);
   }
 
   return (
     <section className="search-form">
       <div className="search-form__container">
       <h1 className="search-form__title">Your new job is waiting for you.</h1>
-      <form className="search-form__form" onSubmit={handleSubmit}>
+      <form className="search-form__form" onSubmit={handleSearchSubmit}>
         <input
           className="search-form__input"
           placeholder="Job Title"
           name="description"
-          value={params.description}
-          onChange={onParamChange}
-        ></input>
-        <input
-          className="search-form__input"
-          placeholder="Enter location"
-          name="loaction"
-          value={params.location}
-          onChange={onParamChange}
+          type="text"
+          onChange={handleChange}
         ></input>
         <button className="search-form__button" type="submit">
           Find Jobs
